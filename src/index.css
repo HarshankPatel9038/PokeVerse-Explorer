@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+*:hover,
+*:focus,
+*:active,
+*:focus-visible,
+*:focus-within {
+  outline: none;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  color: #111;
+  font-size: 16px;
+}
+.main {
+  padding: 30px;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #111;
+}
+@media (max-width: 1199px) {
+  .main {
+    padding: 25px;
+  }
+  body {
+    font-size: 15px;
+  }
+}
+@media (max-width: 991px) {
+  .main {
+    padding: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .main {
+    padding: 15px;
+  }
+}
