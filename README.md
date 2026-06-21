@@ -1,8 +1,8 @@
-# PokéVerse Explorer
+# PokeVerse Explorer
 
 A React + Vite web app for browsing and exploring Pokémon, built with React Router for smooth client-side navigation.
 
-🔗 **Live Demo:** [pokemon-kohl-nu.vercel.app](https://pokemon-kohl-nu.vercel.app)
+🔗 **Live Demo:** [pokemon-kohl-nu.vercel.app](https://pokeverse-explorer.vercel.app/)
 
 ---
 
@@ -74,7 +74,7 @@ This project is deployed on [Vercel](https://vercel.com). Pushing to the `main` 
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome. Feel free to check the [issues page](https://github.com/HarshankPatel9038/Pokemon/issues).
+Contributions, issues, and feature requests are welcome. Feel free to check the [issues page](https://github.com/HarshankPatel9038/PokeVerse-Explorer/issues).
 
 ## 📄 License
 
