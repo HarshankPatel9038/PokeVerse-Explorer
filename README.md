@@ -89,5 +89,6 @@ This project currently has no license specified. Consider adding an [MIT License
 ## 👤 Author
 
 **Harshank Patel**
-GitHub: [@HarshankPatel9038](https://github.com/HarshankPatel9038)
-LinkedIn: [@patel-harshank](https://www.linkedin.com/in/patel-harshank/)
+
+- GitHub: [@HarshankPatel9038](https://github.com/HarshankPatel9038)
+- LinkedIn: [@patel-harshank](https://www.linkedin.com/in/patel-harshank/)
