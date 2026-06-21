@@ -2,7 +2,7 @@
 
 A React + Vite web app for browsing and exploring Pokémon, built with React Router for smooth client-side navigation.
 
-🔗 **Live Demo:** (https://pokeverse-explorer.vercel.app/](https://pokeverse-explorer.vercel.app/)
+🔗 **Live Demo:** [https://pokeverse-explorer.vercel.app/](https://pokeverse-explorer.vercel.app/)
 
 ---
 
