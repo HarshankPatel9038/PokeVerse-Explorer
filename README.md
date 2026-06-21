@@ -2,7 +2,7 @@
 
 A React + Vite web app for browsing and exploring Pokémon, built with React Router for smooth client-side navigation.
 
-🔗 **Live Demo:** [pokemon-kohl-nu.vercel.app](https://pokeverse-explorer.vercel.app/)
+🔗 **Live Demo:** (https://pokeverse-explorer.vercel.app/](https://pokeverse-explorer.vercel.app/)
 
 ---
 
@@ -84,4 +84,5 @@ This project currently has no license specified. Consider adding an [MIT License
 
 **Harshank Patel**
 GitHub: [@HarshankPatel9038](https://github.com/HarshankPatel9038)
+
 Linkedin: [@patel-harshank](https://www.linkedin.com/in/patel-harshank/)
