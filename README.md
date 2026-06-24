@@ -2,7 +2,7 @@
 
 A React + Vite web app for browsing and exploring Pokémon, built with React Router for smooth client-side navigation.
 
-🔗 **Live Demo:** [https://pokeverse-explorer.vercel.app/](https://pokeverse-explorer.vercel.app/)
+🔗 **Live Demo:** [https://harshankpatel9038.github.io/PokeVerse-Explorer/](https://harshankpatel9038.github.io/PokeVerse-Explorer/)
 
 ---
 
@@ -23,7 +23,7 @@ A React + Vite web app for browsing and exploring Pokémon, built with React Rou
 | Build Tool | Vite 5 |
 | Routing | React Router DOM 6 |
 | Linting | ESLint |
-| Deployment | Vercel |
+| Deployment | GitHub Pages |
 
 ## 📦 Getting Started
 
@@ -35,8 +35,8 @@ A React + Vite web app for browsing and exploring Pokémon, built with React Rou
 
 ```bash
 # Clone the repository
-git clone https://github.com/HarshankPatel9038/Pokemon.git
-cd Pokemon
+git clone https://github.com/HarshankPatel9038/PokeVerse-Explorer.git
+cd PokeVerse-Explorer
 
 # Install dependencies
 npm install
@@ -60,7 +60,7 @@ npm run preview
 ## 📁 Project Structure
 
 ```
-Pokemon/
+PokeVerse-Explorer/
 ├── public/          # Static assets
 ├── src/             # App source code (components, pages, etc.)
 ├── index.html        # Entry HTML
@@ -70,7 +70,13 @@ Pokemon/
 
 ## 🚀 Deployment
 
-This project is deployed on [Vercel](https://vercel.com). Pushing to the `main` branch triggers an automatic redeploy.
+This project is deployed on **GitHub Pages** using the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package.
+
+```bash
+npm run deploy
+```
+
+This builds the app and publishes the `dist` folder to the `gh-pages` branch. The live site updates automatically once the branch is pushed.
 
 ## 🤝 Contributing
 
@@ -83,6 +89,6 @@ This project currently has no license specified. Consider adding an [MIT License
 ## 👤 Author
 
 **Harshank Patel**
-GitHub: [@HarshankPatel9038](https://github.com/HarshankPatel9038)
 
-Linkedin: [@patel-harshank](https://www.linkedin.com/in/patel-harshank/)
+- GitHub: [@HarshankPatel9038](https://github.com/HarshankPatel9038)
+- LinkedIn: [@patel-harshank](https://www.linkedin.com/in/patel-harshank/)
