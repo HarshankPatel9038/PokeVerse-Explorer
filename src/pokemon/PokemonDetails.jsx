@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { fetchJson } from "./api";
 
 const PokemonDetails = () => {
   const [pokemon, setPokemon] = useState(null);
@@ -7,31 +8,35 @@ const PokemonDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { pokemonName } = useParams();
-
-  const API = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
-
-  const getApiData = async () => {
-    try {
-      const res = await fetch(API);
-      const data = await res.json();
-      setPokemon(data);
-
-      if (data.species && data.species.url) {
-        const speciesRes = await fetch(data.species.url);
-        const speciesData = await speciesRes.json();
-        setSpeciesData(speciesData);
-      }
-
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      setError(error.message);
-    }
-  };
+  const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(
+    pokemonName?.toLowerCase() || ""
+  )}`;
 
   useEffect(() => {
+    const getApiData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const data = await fetchJson(pokemonUrl, pokemonName);
+        setPokemon(data);
+
+        if (data.species && data.species.url) {
+          const speciesData = await fetchJson(
+            data.species.url,
+            `${pokemonName} species`
+          );
+          setSpeciesData(speciesData);
+        }
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     getApiData();
-  }, []);
+  }, [pokemonName, pokemonUrl]);
 
   if (loading) {
     return (
@@ -45,6 +50,14 @@ const PokemonDetails = () => {
     return (
       <div className="center-elem">
         <h3>{error}</h3>
+      </div>
+    );
+  }
+
+  if (!pokemon || !speciesData) {
+    return (
+      <div className="center-elem">
+        <h3>Pokemon details are unavailable.</h3>
       </div>
     );
   }
@@ -103,7 +116,7 @@ const PokemonDetails = () => {
             </div>
             <div className="flex-info">
               <h5 className="title">Habitat: </h5>
-              <span>{speciesData.habitat.name}</span>
+              <span>{speciesData.habitat?.name || "unknown"}</span>
             </div>
             <div className="flex-info">
               <h5 className="title">Shape: </h5>

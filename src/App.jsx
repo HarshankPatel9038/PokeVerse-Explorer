@@ -3,8 +3,11 @@ import Pokemon from "./pokemon/Index";
 import PokemonDetails from "./pokemon/PokemonDetails";
 
 const App = () => {
+  const basename =
+    import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL;
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Pokemon />} />
         <Route path="/:pokemonName" element={<PokemonDetails />} />

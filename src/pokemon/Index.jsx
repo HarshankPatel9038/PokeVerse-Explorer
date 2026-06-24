@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./pokemon.css";
 import PokemonCard from "./PokemonCard";
 import { Link } from "react-router-dom";
+import { fetchJson } from "./api";
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
@@ -13,21 +14,18 @@ const Pokemon = () => {
 
   const getApiData = async () => {
     try {
-      const res = await fetch(API);
-      const data = await res.json();
+      const data = await fetchJson(API, "Pokemon list");
 
       const innerApiData = data?.results?.map(async (value) => {
-        const res = await fetch(value.url);
-        const data = await res.json();
-        return data;
+        return fetchJson(value.url, value.name);
       });
 
       const innerData = await Promise.all(innerApiData);
       setPokemon(innerData);
-      setLoading(false);
     } catch (error) {
-      setLoading(false);
       setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -57,7 +55,7 @@ const Pokemon = () => {
 
   return (
     <div className="main">
-      <h1 className="main-title">Lets Catch Pokemon</h1>
+      <h1 className="main-title">Let&apos;s Catch Pokemon</h1>
       <div className="input-wrapper">
         <input
         className="search-input"
