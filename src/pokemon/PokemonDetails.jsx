@@ -88,18 +88,20 @@ const PokemonDetails = () => {
       
       <div className="pokemon-details-wrapper">
         <div className="pokemon-detail-img-container">
-          <div className="pokemon-detail-img">
-            <img
-              src={pokemon.sprites.other.dream_world.front_default || pokemon.sprites.front_default}
-              alt={pokemon.name}
-            />
-          </div>
-          <div className="badges-container" style={{ justifyContent: 'center' }}>
-            {pokemon.types.map((type) => (
-              <span key={type.type.name} className="badge">
-                {type.type.name}
-              </span>
-            ))}
+          <div className="sticky-img-wrapper" style={{ position: 'sticky', top: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', width: '100%' }}>
+            <div className="pokemon-detail-img">
+              <img
+                src={pokemon.sprites.other.dream_world.front_default || pokemon.sprites.front_default}
+                alt={pokemon.name}
+              />
+            </div>
+            <div className="badges-container" style={{ justifyContent: 'center' }}>
+              {pokemon.types.map((type) => (
+                <span key={type.type.name} className="badge">
+                  {type.type.name}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
         
