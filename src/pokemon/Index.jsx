@@ -6,6 +6,8 @@ import { fetchJson } from "./api";
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
+  const [allPokemonList, setAllPokemonList] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState(null);
@@ -59,11 +61,54 @@ const Pokemon = () => {
 
   useEffect(() => {
     getApiData("https://pokeapi.co/api/v2/pokemon?limit=24", false);
+    
+    // Fetch all pokemon names/urls for the search functionality
+    const fetchAllPokemon = async () => {
+      try {
+        const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10000");
+        const data = await res.json();
+        setAllPokemonList(data.results);
+      } catch (err) {
+        console.error("Failed to fetch all pokemon names:", err);
+      }
+    };
+    fetchAllPokemon();
   }, []);
 
-  const searchData = pokemon.filter((pokemonData) =>
-    pokemonData.name.toLowerCase().includes(search.toLowerCase())
-  );
+  useEffect(() => {
+    if (!search.trim()) {
+      return;
+    }
+
+    const fetchSearchResults = async () => {
+      setLoading(true);
+      setError(null);
+      
+      const filtered = allPokemonList
+        .filter((p) => p.name.includes(search.toLowerCase().trim()))
+        .slice(0, 30); // Limit to 30 results to avoid API overload
+
+      try {
+        const innerApiData = filtered.map(async (value) => {
+          return fetchJson(value.url, value.name);
+        });
+        const innerData = await Promise.all(innerApiData);
+        setSearchResults(innerData);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const debounceId = setTimeout(() => {
+      fetchSearchResults();
+    }, 500);
+
+    return () => clearTimeout(debounceId);
+  }, [search, allPokemonList]);
+
+  const displayData = search.trim() ? searchResults : pokemon;
 
   if (loading && pokemon.length === 0) {
     return (
@@ -96,15 +141,15 @@ const Pokemon = () => {
         />
       </div>
       
-      {searchData.length === 0 ? (
+      {displayData.length === 0 && !loading ? (
         <div style={{ textAlign: 'center', margin: '50px 0', color: 'var(--text-secondary)' }}>
           <h2>No Pokemon found matching "{search}"</h2>
         </div>
       ) : (
         <>
           <div className="card-wrapper">
-            {searchData.map((pokemonData, index) => {
-              if (searchData.length === index + 1) {
+            {displayData.map((pokemonData, index) => {
+              if (displayData.length === index + 1 && !search) {
                 return (
                   <Link ref={lastPokemonElementRef} key={pokemonData.id} to={`/${pokemonData.name}`}>
                     <PokemonCard pokemonData={pokemonData} />
