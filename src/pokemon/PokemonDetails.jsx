@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchJson } from "./api";
+import NotFound from "./NotFound";
 
 const PokemonDetails = () => {
   const [pokemon, setPokemon] = useState(null);
@@ -63,11 +64,7 @@ const PokemonDetails = () => {
   }
 
   if (error) {
-    return (
-      <div className="center-elem">
-        <h3>{error}</h3>
-      </div>
-    );
+    return <NotFound />;
   }
 
   if (!pokemon || !speciesData) {
