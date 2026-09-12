@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Pokemon from "./pokemon/Index";
 import PokemonDetails from "./pokemon/PokemonDetails";
+import NotFound from "./pokemon/NotFound";
 
 const App = () => {
   const basename =
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Pokemon />} />
         <Route path="/:pokemonName" element={<PokemonDetails />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
