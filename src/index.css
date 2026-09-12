@@ -22,27 +22,27 @@
   --radius-2xl: 32px;
   --radius-full: 9999px;
 
-  /* Color Palette (Vibrant Modern) */
-  --bg-color: #f4f6fa;
-  --bg-secondary: #e9ecef;
-  --card-bg: #ffffff;
+  /* Color Palette (Dark Mode) */
+  --bg-color: #0f1117;
+  --bg-secondary: #1a1d27;
+  --card-bg: #1e2130;
 
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-tertiary: #94a3b8;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #475569;
 
-  --border-color: rgba(148, 163, 184, 0.2);
-  --border-hover: rgba(148, 163, 184, 0.4);
+  --border-color: rgba(148, 163, 184, 0.08);
+  --border-hover: rgba(148, 163, 184, 0.2);
 
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
   --accent-text: #ffffff;
 
   /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.06);
-  --shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
 
   /* Pokemon Types (Deep Dark Colors) */
   --type-normal: #5C5C3D;
