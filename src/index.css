@@ -2,7 +2,7 @@
 
 :root {
   --font-main: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
-  
+
   /* Sizing Variables */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -26,18 +26,18 @@
   --bg-color: #f4f6fa;
   --bg-secondary: #e9ecef;
   --card-bg: #ffffff;
-  
+
   --text-primary: #1e293b;
   --text-secondary: #64748b;
   --text-tertiary: #94a3b8;
-  
+
   --border-color: rgba(148, 163, 184, 0.2);
   --border-hover: rgba(148, 163, 184, 0.4);
-  
+
   --accent: #3b82f6;
   --accent-hover: #2563eb;
   --accent-text: #ffffff;
-  
+
   /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
   --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.04);
@@ -65,17 +65,42 @@
   --type-fairy: #7A425E;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-body { font-family: var(--font-main); background-color: var(--bg-color); color: var(--text-primary); min-height: 100vh; }
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
 
-.main { width: 100%; max-width: 100%; margin: 0 auto; padding: 1.5rem 5%; min-height: 100vh; }
+.main {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 5%;
+  min-height: 100vh;
+}
 
-@media (max-width: 768px) { .main { padding: 1rem; } }
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+}
 
-a { text-decoration: none; color: inherit; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-ul, ol { list-style: none; }
+ul,
+ol {
+  list-style: none;
+}
 
 ::-webkit-scrollbar {
   width: 10px;

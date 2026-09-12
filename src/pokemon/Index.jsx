@@ -143,7 +143,7 @@ const Pokemon = () => {
       
       {displayData.length === 0 && !loading ? (
         <div style={{ textAlign: 'center', margin: '50px 0', color: 'var(--text-secondary)' }}>
-          <h2>No Pokemon found matching "{search}"</h2>
+          <h2>No Pokemon found matching &quot;{search}&quot;</h2>
         </div>
       ) : (
         <>
